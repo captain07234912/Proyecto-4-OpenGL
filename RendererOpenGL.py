@@ -1,6 +1,6 @@
 import pygame
 from pygame.locals import *
-
+from pygame import mixer
 from gl import Renderer, Model
 import shaders
 
@@ -14,7 +14,10 @@ Jorge Suchite Carnet 15293
 Renderer 
 
 """
-
+# pip install mixer
+pygame.mixer.init()
+pygame.mixer.music.load('Donkey.mp3')
+pygame.mixer.music.play(500)
 deltaTime = 0.0
 
 # Inicializacion de pygame
@@ -110,7 +113,7 @@ while isPlaying:
                 r.wireframeMode()
             elif ev.key == pygame.K_ESCAPE:
                 isPlaying = False
-            elif ev.key == pygame.K_t:  # Cambiar 
+            elif ev.key == pygame.K_t:  # Cambiar
                 r.modeloAct = (r.modeloAct + 1) % len(r.modelList)
 
     # Main Renderer Loop
