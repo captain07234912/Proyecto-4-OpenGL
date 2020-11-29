@@ -118,8 +118,8 @@ class Renderer(object):
         glViewport(0, 0, self.width, self.height)
 
         self.temp = 0
-        self.modeloAct = 0
-        self.modelList = []
+        self.coronamodelo = 0
+        self.modeloLista = []
 
         # View Matrix
         self.camPosition = glm.vec3(0,0,0)
@@ -179,15 +179,15 @@ class Renderer(object):
             glUniform4f(glGetUniformLocation(self.active_shader, "color"), 
                         1, 1, 1, 1)
 
-        self.modelList[self.modeloAct].rotarcionPitch(self.rotation.x)
-        self.modelList[self.modeloAct].rotarcionYaw(self.rotation.y)
-        self.modelList[self.modeloAct].rotarcionRoll(self.rotation.z)
-        for model in self.modelList:
+        self.modeloLista[self.coronamodelo].rotarcionPitch(self.rotation.x)
+        self.modeloLista[self.coronamodelo].rotarcionYaw(self.rotation.y)
+        self.modeloLista[self.coronamodelo].rotarcionRoll(self.rotation.z)
+        for model in self.modeloLista:
             if self.active_shader:
                 glUniformMatrix4fv(glGetUniformLocation(self.active_shader, "model"),
-                                   1, GL_FALSE, glm.value_ptr(self.modelList[self.modeloAct].getMatrix()))
+                                   1, GL_FALSE, glm.value_ptr(self.modeloLista[self.coronamodelo].getMatrix()))
 
-            self.modelList[self.modeloAct].renderInScene()
+            self.modeloLista[self.coronamodelo].renderInScene()
 
 
 
