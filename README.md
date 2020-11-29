@@ -4,12 +4,13 @@
 #No tuve mucho tiempo, es poquito pero es trabajo honesto.jpg
 
 #teclas de traslación 
-#x
-#a d
+#x :a d
 
-#Y
-#w s
+#Y :w s
 
-#Z
-#e, q
+#Z :e, q
+
+# para la luz 
+
+# las flechas 
 
