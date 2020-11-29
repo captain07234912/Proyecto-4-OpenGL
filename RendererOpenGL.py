@@ -17,7 +17,7 @@ Renderer
 # pip install mixer
 pygame.mixer.init()
 pygame.mixer.music.load('Donkey.mp3')
-pygame.mixer.music.play(500)
+pygame.mixer.music.play(5000000)
 deltaTime = 0.0
 
 # Inicializacion de pygame
