@@ -33,10 +33,10 @@ r.pointLight.x = 10
 
 r.setShaders(shaders.vertex_shader, shaders.fragment_shader)
 
-r.modelList.append(Model('patrick.obj', 'Char_Patrick.bmp'))
-r.modelList.append(Model(fileName = 'Charizard.obj',textureName='lizardtext.bmp' ))
-r.modelList.append(Model(fileName = 'Astronaut.obj',textureName='space.bmp' ))
-r.modelList.append(Model(fileName = 'narutokun.obj',textureName='Body.bmp' ))
+r.modeloLista.append(Model('patrick.obj', 'Char_Patrick.bmp'))
+r.modeloLista.append(Model(fileName ='Charizard.obj', textureName='lizardtext.bmp'))
+r.modeloLista.append(Model(fileName ='Astronaut.obj', textureName='space.bmp'))
+r.modeloLista.append(Model(fileName ='narutokun.obj', textureName='Body.bmp'))
 
 isPlaying = True
 while isPlaying:
@@ -61,20 +61,7 @@ while isPlaying:
         if r.camPosition.z > 5:
             r.camPosition.z -= 50 * deltaTime
 
-# ROTAR AL OBJETO
 
-    if keys[pygame.K_i]:  # Pitch
-        r.rotation.x -= 30 * deltaTime
-    if keys[pygame.K_k]:
-        r.rotation.x += 30 * deltaTime
-    if keys[pygame.K_j]:  # Yaw
-        r.rotation.y -= 30 * deltaTime
-    if keys[pygame.K_l]:
-        r.rotation.y += 30 * deltaTime
-    if keys[pygame.K_u]:  # Roll
-        r.rotation.z += 30 * deltaTime
-    if keys[pygame.K_o]:
-        r.rotation.z -= 30 * deltaTime
     # luz del objeto
     if keys[pygame.K_LEFT]:
         r.pointLight.x -= 30 * deltaTime
@@ -84,9 +71,9 @@ while isPlaying:
         r.pointLight.y += 30 * deltaTime
     if keys[pygame.K_DOWN]:
         r.pointLight.y -= 30 * deltaTime
-    if keys[pygame.K_n]:
+    if keys[pygame.K_k]:
         r.pointLight.z += 30 * deltaTime
-    if keys[pygame.K_m]:
+    if keys[pygame.K_l]:
         r.pointLight.z -= 30 * deltaTime
 
         # rotar
@@ -114,7 +101,7 @@ while isPlaying:
             elif ev.key == pygame.K_ESCAPE:
                 isPlaying = False
             elif ev.key == pygame.K_t:  # Cambiar
-                r.modeloAct = (r.modeloAct + 1) % len(r.modelList)
+                r.coronamodelo = (r.coronamodelo + 1) % len(r.modeloLista)
 
 ## uso del mouse
         elif ev.type == MOUSEBUTTONDOWN:
