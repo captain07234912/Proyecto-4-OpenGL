@@ -4,12 +4,12 @@
 #No tuve mucho tiempo, es poquito pero es trabajo honesto.jpg
 
 teclas de traslación 
-x
+#x
 a d
 
-Y
+#Y
 w s
 
-Z
+#Z
 e, q
 
