@@ -22,3 +22,6 @@
 
 # para rotar 
 #x c v b n m
+
+# se puede usar el mouse
+#click izquierdo y derecho
