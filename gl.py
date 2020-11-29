@@ -35,6 +35,15 @@ class Model(object):
         self.rotation = glm.vec3(0,0,0) # pitch, yaw, roll
         self.scale = glm.vec3(1,1,1)
 
+    def rotarcionPitch(self, pitch):
+        self.rotation = glm.vec3(pitch, self.rotation.y, self.rotation.z)
+
+    def rotarcionYaw(self, yaw):
+        self.rotation = glm.vec3(self.rotation.x, yaw, self.rotation.z)
+
+    def rotarcionRoll(self, roll):
+        self.rotation = glm.vec3(self.rotation.x, self.rotation.y, roll)
+
     def getMatrix(self):
         i = glm.mat4(1)
         translate = glm.translate(i, self.position)
@@ -109,18 +118,20 @@ class Renderer(object):
         glViewport(0, 0, self.width, self.height)
 
         self.temp = 0
-
+        self.modeloAct = 0
         self.modelList = []
 
         # View Matrix
         self.camPosition = glm.vec3(0,0,0)
         self.camRotation = glm.vec3(0,0,0) # pitch, yaw, roll
-
+        self.rotation = glm.vec3(0, 0, 0)
         # Light
         self.pointLight = glm.vec4(0,0,0,0)
 
         # Perspective Projection Matrix
         self.projection = glm.perspective(glm.radians(60), self.width / self.height, 0.1, 1000)
+
+
 
     def getViewMatrix(self):
         i = glm.mat4(1)
@@ -168,13 +179,15 @@ class Renderer(object):
             glUniform4f(glGetUniformLocation(self.active_shader, "color"), 
                         1, 1, 1, 1)
 
-
+        self.modelList[self.modeloAct].rotarcionPitch(self.rotation.x)
+        self.modelList[self.modeloAct].rotarcionYaw(self.rotation.y)
+        self.modelList[self.modeloAct].rotarcionRoll(self.rotation.z)
         for model in self.modelList:
             if self.active_shader:
                 glUniformMatrix4fv(glGetUniformLocation(self.active_shader, "model"),
-                                   1, GL_FALSE, glm.value_ptr( model.getMatrix() ))
+                                   1, GL_FALSE, glm.value_ptr(self.modelList[self.modeloAct].getMatrix()))
 
-            model.renderInScene()
+            self.modelList[self.modeloAct].renderInScene()
 
 
 
