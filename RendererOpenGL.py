@@ -36,7 +36,7 @@ r.setShaders(shaders.vertex_shader, shaders.fragment_shader)
 r.modelList.append(Model('patrick.obj', 'Char_Patrick.bmp'))
 r.modelList.append(Model(fileName = 'Charizard.obj',textureName='lizardtext.bmp' ))
 r.modelList.append(Model(fileName = 'Astronaut.obj',textureName='space.bmp' ))
-
+r.modelList.append(Model(fileName = 'narutokun.obj',textureName='Body.bmp' ))
 
 isPlaying = True
 while isPlaying:
