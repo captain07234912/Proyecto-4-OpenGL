@@ -17,3 +17,8 @@
 
 #las flechas 
 
+# para cambiar de modelo 
+#t
+
+# para rotar 
+#x c v b n m
