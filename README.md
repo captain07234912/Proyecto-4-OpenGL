@@ -3,14 +3,17 @@
 #El OpenGL accelerate me tira error no sé por qué  
 #No tuve mucho tiempo, es poquito pero es trabajo honesto.jpg
 
-#teclas de traslación 
-#x :a d
+# teclas de traslación 
+# x:
+#a d
 
-#Y :w s
+# Y:
+#w s
 
-#Z :e, q
+# Z:
+#e, q
 
 # para la luz 
 
-# las flechas 
+#las flechas 
 
