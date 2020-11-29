@@ -116,6 +116,18 @@ while isPlaying:
             elif ev.key == pygame.K_t:  # Cambiar
                 r.modeloAct = (r.modeloAct + 1) % len(r.modelList)
 
+## uso del mouse
+        elif ev.type == MOUSEBUTTONDOWN:
+            if ev.button == 1:
+                r.camPosition.x += 55 * deltaTime
+            if ev.button == 2:
+                r.camPosition.x = 5
+                r.camPosition.y = 10
+                r.camPosition.z = 55
+
+            if ev.button == 3:
+                r.camPosition.x -= 70 * deltaTime
+
     # Main Renderer Loop
     r.render()
 
