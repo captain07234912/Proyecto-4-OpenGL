@@ -77,18 +77,18 @@ while isPlaying:
         r.pointLight.z -= 30 * deltaTime
 
         # rotar
-        if keys[pygame.K_b]:  # Pitch
-            r.rotation.x -= 30 * deltaTime
-        if keys[pygame.K_n]:
-            r.rotation.x += 30 * deltaTime
-        if keys[pygame.K_m]:  # Yaw
-            r.rotation.y -= 30 * deltaTime
-        if keys[pygame.K_c]:
-            r.rotation.y += 30 * deltaTime
-        if keys[pygame.K_v]:  # Roll
-            r.rotation.z += 30 * deltaTime
-        if keys[pygame.K_x]:
-            r.rotation.z -= 30 * deltaTime
+    if keys[pygame.K_b]:  # Pitch
+            r.rotation.x -= 80* deltaTime
+    if keys[pygame.K_n]:
+            r.rotation.x += 80 * deltaTime
+    if keys[pygame.K_m]:  # Yaw
+            r.rotation.y -= 80 * deltaTime
+    if keys[pygame.K_c]:
+            r.rotation.y += 80 * deltaTime
+    if keys[pygame.K_v]:  # Roll
+            r.rotation.z += 80 * deltaTime
+    if keys[pygame.K_x]:
+            r.rotation.z -= 80 * deltaTime
     for ev in pygame.event.get():
         if ev.type == pygame.QUIT:
             isPlaying = False
